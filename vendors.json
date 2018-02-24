@@ -8,14 +8,17 @@
     "node_modules/ladda/dist/ladda-themeless.min.css",
     "node_modules/quill/dist/quill.snow.css",
     "node_modules/simple-line-icons/css/simple-line-icons.css",
-    "node_modules/spinkit/css/spinkit.css"
+    "node_modules/spinkit/css/spinkit.css",
+    "node_modules/summernote/dist/summernote-bs4.css"
+
   ],
   "flags": [
     "node_modules/flag-icon-css/flags/**"
   ],
   "fonts": [
     "node_modules/font-awesome/fonts/**",
-    "node_modules/simple-line-icons/fonts/**"
+    "node_modules/simple-line-icons/fonts/**",
+    "node_modules/summernote/dist/font/**"
   ],
   "js": [
     "node_modules/bootstrap/dist/js/bootstrap.min.js",
@@ -43,7 +46,10 @@
     "node_modules/pace-progress/pace.min.js",
     "node_modules/popper.js/dist/umd/popper.min.js",
     "node_modules/popper.js/dist/umd/popper.min.js.map",
-    "node_modules/select2/dist/js/select2.min.js",
-    "node_modules/toastr/toastr.js"
+    "node_modules/select2/select2.js",
+    "node_modules/toastr/toastr.js",
+    "node_modules/summernote/dist/summernote-bs4.min.js",
+    "node_modules/summernote/dist/summernote-bs4.js.map"
+
   ]
 }

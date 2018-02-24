@@ -11,12 +11,19 @@
     "jquery": "3.2.1",
     "pace-progress": "1.0.2",
     "popper.js": "1.12.9",
-    "simple-line-icons": "2.4.1"
+    "select2": "^3.0.0",
+    "jquery-validation": "latest",
+    "jquery-ui": "^1.12.1",
+    "jquery.maskedinput": "latest",
+    "ladda": "latest",
+    "datatables": "latest",
+    "simple-line-icons": "2.4.1",
+    "summernote": "latest"
   },
   "devDependencies": {
     "browser-sync": "2.23.6",
     "del": "3.0.0",
-    "gulp": "3.9.1",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "4.1.0",
     "gulp-bower-src": "0.1.0",
     "gulp-concat": "2.6.1",
