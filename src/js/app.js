@@ -128,6 +128,12 @@ if ($.ajaxLoad) {
     setUpUrl($.defaultPage);
   }
 
+  $(document).on('click','a.ajaxLoad[href!="#"][href*=".html"]', function(e){
+      e.preventDefault();
+      var target = $(e.currentTarget);
+      setUpUrl(target.attr('href'));
+  });
+
   $(document).on('click', '.nav a[href!="#"]', function(e) {
 
     var thisNav = $(this).parent().parent();

@@ -1,0 +1,83 @@
+<script>
+  var requireCSS=[];
+  loadCSS("/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css");
+  loadCSS("/node_modules/datatables.net-responsive-bs4/css/responsive.bootstrap4.css");
+  var requireJS = [
+    "/node_modules/datatables.net/js/jquery.dataTables.js",
+    "/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js",
+    "/node_modules/datatables.net-responsive/js/dataTables.responsive.min.js",
+    "/node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"
+  ];
+  loadJS(requireJS, "js/views/main.js");
+  // loadJS(requireJS, "/node_modules/datatables.net/js/jquery.dataTables.min.js");
+  // loadJS(requireJS, "/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js");
+  // loadJS(requireJS, "/node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.js");
+  // loadJS(requireJS, "js/views/main.js");
+</script>
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="display-4">Username (role)</h1>
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-user"></i> Users
+        </div>
+        <div class="card-block">
+          <form id="signupForm" class="noSubmit" action="">
+
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">Username:</label>
+              <div class="col-md-9">
+                <p class="form-control-static">ahmad</p>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">Full Name:</label>
+              <div class="col-md-9">
+                <p class="form-control-static">Ahmad Kazemi</p>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">Email:</label>
+              <div class="col-md-9">
+                <p class="form-control-static">ahmad.kazemi@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">Mobile:</label>
+              <div class="col-md-9">
+                <p class="form-control-static">09111231234</p>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">Email Verification:</label>
+              <div class="col-md-1-9|auto">
+                <p class="form-control-static"><span class="badge badge-success">Confirmed</span></p>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">Roles: </label>
+              <div class="col-md-1-9|auto">
+                <ul class="list-inline">
+                  <li class="list-inline-item"><span class="badge badge-pill badge-dark">user</span></li>
+                  <li class="list-inline-item"><span class="badge badge-pill badge-dark">admin</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <a class="btn btn-primary">Edit</a> <a href="#" class="btn btn-danger">Deactivate</a>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
