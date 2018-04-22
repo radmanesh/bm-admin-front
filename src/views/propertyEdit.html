@@ -1,0 +1,886 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <i class="icon-note"></i> Edit property
+                </div>
+                <div class="card-block">
+
+                    <div class="card crud-form-card PropertyManager">
+                      <div class="card-header">
+                        <strong>Add Property</strong>
+                    </div>
+                    <div class="card-body">
+                        <form action="/ec/propertymanager" method="post" accept-charset="utf-8" enctype="multipart/form-data" class="jvalidate" >
+                            <input type="hidden" name="authenticityToken" value="06dce21c0af18e28d5b5fe2556f2336adf010eb0"/>
+
+
+
+
+                            <div class="crudField crud_text">
+
+
+
+
+
+                                <div class="form-group row "  id="object_name_group">
+                                  <label class="col-sm-2 col-form-label" for="object_name">name</label>
+                                  <div class="col-sm-10">
+                                    <input name="object.name" type="" class="form-control " id="object_name" placeholder="" value=""   >
+                                    <small id="object_namehelpBlock" class="form-text text-muted">
+                                        <div>Required.</div>
+                                    </small>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+
+
+
+                        <div class="crudField crud_longtext">
+
+
+
+
+
+
+
+
+
+                            <div class="form-group row "  id="object_description_group">
+                              <label class="col-sm-2 col-form-label" for="object_description">description</label>
+                              <div class="col-sm-10">
+                                <textarea class="form-control  summernote summer2" name="object.description" id="object_description"
+                                rows="3" >
+
+                            </textarea>
+
+                            <small id="object_descriptionhelpBlock" class="form-text text-muted">
+                                <div>Max length is 2048.</div>
+                            </small>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+                <div class="crudField crud_unknown">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+                <div class="crudField crud_date">
+
+
+
+
+
+
+
+
+
+
+                    <div class="form-group row "  id="object_addedAt_group">
+                      <label class="col-sm-2 col-form-label" for="object_addedAt">addedAt</label>
+                      <div class="col-sm-10">
+                        <input name="object.addedAt" type="date" class="form-control " id="object_addedAt" placeholder="" value=""   >
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+
+            <div class="crudField crud_date">
+
+
+
+
+
+
+
+
+
+
+                <div class="form-group row "  id="object_modifiedAt_group">
+                  <label class="col-sm-2 col-form-label" for="object_modifiedAt">modifiedAt</label>
+                  <div class="col-sm-10">
+                    <input name="object.modifiedAt" type="date" class="form-control " id="object_modifiedAt" placeholder="" value=""   >
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+        <div class="crudField crud_enum">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="form-group row "  id="object_type_group">
+              <label class="col-sm-2 col-form-label">type</label>
+              <div class="col-sm-10">
+                <select id="object_type" name="object.type" class="form-control select2 select2-single " >
+                    <option name="APARTMENT" ord="0" value="APARTMENT" >APARTMENT</option>
+                    <option name="DETACHED" ord="1" value="DETACHED" >DETACHED</option>
+                    <option name="SEMI_DETACHED" ord="2" value="SEMI_DETACHED" >SEMI_DETACHED</option>
+                    <option name="LAND" ord="3" value="LAND" >LAND</option>
+                </select>
+                <small id="object_typehelpBlock" class="form-text text-muted">
+                    <div>Required.</div>
+                </small>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+    <div class="crudField crud_enum">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="form-group row "  id="object_status_group">
+          <label class="col-sm-2 col-form-label">status</label>
+          <div class="col-sm-10">
+            <select id="object_status" name="object.status" class="form-control select2 select2-single " >
+                <option name="AVAILABLE" ord="0" value="AVAILABLE" >AVAILABLE</option>
+                <option name="RENTED" ord="1" value="RENTED" >RENTED</option>
+                <option name="SOLD" ord="2" value="SOLD" >SOLD</option>
+                <option name="UNAVAILABLE" ord="3" value="UNAVAILABLE" >UNAVAILABLE</option>
+            </select>
+            <small id="object_statushelpBlock" class="form-text text-muted">
+                <div>Required.</div>
+            </small>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_enum">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="form-group row "  id="object_category_group">
+      <label class="col-sm-2 col-form-label">category</label>
+      <div class="col-sm-10">
+        <select id="object_category" name="object.category" class="form-control select2 select2-single " >
+            <option name="RESIDENTIAL" ord="0" value="RESIDENTIAL" >stock.propertyCategory.residential</option>
+            <option name="OFFICE" ord="1" value="OFFICE" >stock.propertyCategory.office</option>
+            <option name="COMMERCIAL" ord="2" value="COMMERCIAL" >stock.propertyCategory.commercial</option>
+            <option name="INDUSTRIAL" ord="3" value="INDUSTRIAL" >stock.propertyCategory.industrial</option>
+            <option name="FARMING" ord="4" value="FARMING" >stock.propertyCategory.farming</option>
+        </select>
+        <small id="object_categoryhelpBlock" class="form-text text-muted">
+            <div>Required.</div>
+        </small>
+    </div>
+</div>
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_enum">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="form-group row "  id="object_situation_group">
+      <label class="col-sm-2 col-form-label">situation</label>
+      <div class="col-sm-10">
+        <select id="object_situation" name="object.situation" class="form-control select2 select2-single " >
+            <option name="BUILT" ord="0" value="BUILT" >stock.propertySituation.built</option>
+            <option name="UNDER_CUNSTRUCTION" ord="1" value="UNDER_CUNSTRUCTION" >stock.propertySituation.under_cunstruction</option>
+            <option name="SCHEDULED" ord="2" value="SCHEDULED" >stock.propertySituation.scheduled</option>
+        </select>
+        <small id="object_situationhelpBlock" class="form-text text-muted">
+            <div>Required.</div>
+        </small>
+    </div>
+</div>
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_binary">
+
+
+
+
+
+
+
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="object_propertyPlanSketch">propertyPlanSketch</label>
+    <div class=" col-sm-10">
+      <input type="file" name="object.propertyPlanSketch" class="form-control-file " id="object_propertyPlanSketch" >
+
+  </div>
+</div>
+<div id="object_propertyPlanSketchpreviews" class="row">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_imageRelation">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_unknown">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_unknown">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_binary">
+
+
+
+
+
+
+
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="object_icon">icon</label>
+    <div class=" col-sm-10">
+      <input type="file" name="object.icon" class="form-control-file " id="object_icon" >
+
+  </div>
+</div>
+<div id="object_iconpreviews" class="row">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_number">
+
+
+
+
+
+
+
+
+
+    <div class="form-group row "  id="object_toralArea_group">
+      <label class="col-sm-2 col-form-label" for="object_toralArea">toralArea</label>
+      <div class="col-sm-10">
+        <input name="object.toralArea" type="number" class="form-control " id="object_toralArea" placeholder="" value=""   >
+        <small id="object_toralAreahelpBlock" class="form-text text-muted">
+            <div>Between 10 and 10240</div>
+        </small>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_number">
+
+
+
+
+
+
+
+
+
+    <div class="form-group row "  id="object_floorLevels_group">
+      <label class="col-sm-2 col-form-label" for="object_floorLevels">floorLevels</label>
+      <div class="col-sm-10">
+        <input name="object.floorLevels" type="number" class="form-control " id="object_floorLevels" placeholder="" value=""   >
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_number">
+
+
+
+
+
+
+
+
+
+    <div class="form-group row "  id="object_roomCount_group">
+      <label class="col-sm-2 col-form-label" for="object_roomCount">roomCount</label>
+      <div class="col-sm-10">
+        <input name="object.roomCount" type="number" class="form-control " id="object_roomCount" placeholder="" value=""   >
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_number">
+
+
+
+
+
+
+
+
+
+    <div class="form-group row "  id="object_parkingCount_group">
+      <label class="col-sm-2 col-form-label" for="object_parkingCount">parkingCount</label>
+      <div class="col-sm-10">
+        <input name="object.parkingCount" type="number" class="form-control " id="object_parkingCount" placeholder="" value=""   >
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_number">
+
+
+
+
+
+
+
+
+
+    <div class="form-group row "  id="object_parkingArea_group">
+      <label class="col-sm-2 col-form-label" for="object_parkingArea">parkingArea</label>
+      <div class="col-sm-10">
+        <input name="object.parkingArea" type="number" class="form-control " id="object_parkingArea" placeholder="" value=""   >
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_number">
+
+
+
+
+
+
+
+
+
+    <div class="form-group row "  id="object_livingroomCount_group">
+      <label class="col-sm-2 col-form-label" for="object_livingroomCount">livingroomCount</label>
+      <div class="col-sm-10">
+        <input name="object.livingroomCount" type="number" class="form-control " id="object_livingroomCount" placeholder="" value=""   >
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_number">
+
+
+
+
+
+
+
+
+
+    <div class="form-group row "  id="object_restroomCount_group">
+      <label class="col-sm-2 col-form-label" for="object_restroomCount">restroomCount</label>
+      <div class="col-sm-10">
+        <input name="object.restroomCount" type="number" class="form-control " id="object_restroomCount" placeholder="" value=""   >
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_number">
+
+
+
+
+
+
+
+
+
+    <div class="form-group row "  id="object_bathroomCount_group">
+      <label class="col-sm-2 col-form-label" for="object_bathroomCount">bathroomCount</label>
+      <div class="col-sm-10">
+        <input name="object.bathroomCount" type="number" class="form-control " id="object_bathroomCount" placeholder="" value=""   >
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_number">
+
+
+
+
+
+
+
+
+
+    <div class="form-group row "  id="object_garderArea_group">
+      <label class="col-sm-2 col-form-label" for="object_garderArea">garderArea</label>
+      <div class="col-sm-10">
+        <input name="object.garderArea" type="number" class="form-control " id="object_garderArea" placeholder="" value=""   >
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_number">
+
+
+
+
+
+
+
+
+
+    <div class="form-group row "  id="object_storageRoomArea_group">
+      <label class="col-sm-2 col-form-label" for="object_storageRoomArea">storageRoomArea</label>
+      <div class="col-sm-10">
+        <input name="object.storageRoomArea" type="number" class="form-control " id="object_storageRoomArea" placeholder="" value=""   >
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_relation">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="form-group row "  id="object_valuation_group">
+      <label class="col-sm-2 col-form-label" for="object_valuation">valuation</label>
+      <div class="col-sm-10">
+        <div class="input-group mb-3">
+            <select id="object_valuation" name="object.valuation.id" class="form-control select2 slect2-single chosen-select ">
+                <option value="">(Please select a value)</option>
+            </select>
+
+            <div class="input-group-append">
+                <a class="btn btn-outline-secondary" href="javascript:refreshField_valuation()">Refresh</a>
+            </div>
+        </div>
+        <small id="object_valuationhelpBlock" class="form-text text-muted">
+            <div>Required.</div>
+        </small>
+    </div>
+
+
+
+    <script type="text/javascript">
+        refreshField_valuation=function(){
+          var refreshFieldRoute = {url: function(args) { var pattern = '/admin.property.propertymanager/ajaxrefreshfield?fieldName=:fieldName&id=:id'; for (var key in args) { pattern = pattern.replace(':'+key, args[key] || ''); } return pattern; },method: 'GET'}
+          $.ajax({
+            url: refreshFieldRoute.url( { fieldName:'valuation', id:'' } ),
+            type: refreshFieldRoute.method,
+            data: ''
+        })
+          .done(function(data){
+              $('#object_valuation_group').parent().html(data);
+              console.log(data);
+              $('select.select2').select2();
+          })
+          .fail(function( jqXHR, textStatus ) {
+              alert('failed : '+textStatus);
+          })
+      }
+  </script>
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+<div class="crudField crud_relation">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="form-group row "  id="object_provider_group">
+      <label class="col-sm-2 col-form-label" for="object_provider">provider</label>
+      <div class="col-sm-10">
+        <div class="input-group mb-3">
+            <select id="object_provider" name="object.provider.id" class="form-control select2 slect2-single chosen-select ">
+                <option value="">(None)</option>
+                <option value="7" >NaturalPerson[7]</option>
+                <option value="8" >NaturalPerson[8]</option>
+            </select>
+
+            <div class="input-group-append">
+                <a class="btn btn-outline-secondary" href="javascript:refreshField_provider()">Refresh</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+        refreshField_provider=function(){
+          var refreshFieldRoute = {url: function(args) { var pattern = '/admin.property.propertymanager/ajaxrefreshfield?fieldName=:fieldName&id=:id'; for (var key in args) { pattern = pattern.replace(':'+key, args[key] || ''); } return pattern; },method: 'GET'}
+          $.ajax({
+            url: refreshFieldRoute.url( { fieldName:'provider', id:'' } ),
+            type: refreshFieldRoute.method,
+            data: ''
+        })
+          .done(function(data){
+              $('#object_provider_group').parent().html(data);
+              console.log(data);
+              $('select.select2').select2();
+          })
+          .fail(function( jqXHR, textStatus ) {
+              alert('failed : '+textStatus);
+          })
+      }
+  </script>
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<p class="crudButtons">
+  <input class="btn btn-primary" type="submit" name="_save" value="Save" />
+  <input class="btn btn-default" type="submit" name="_saveAndContinue" value="Save and continue editing" />
+  <input class="btn btn-default" type="submit" name="_saveAndAddAnother" value="Save and create another" />
+</p>
+
+</form>      </div>
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+</div>
+<script>
+  var requireCSS=[];
+  loadCSS("/node_modules/select2/select2.css");
+  loadCSS("/node_modules/summernote/dist/summernote-bs4.css");
+  var requireJS = [
+  "node_modules/summernote/dist/summernote-bs4.min.js",
+  "node_modules/jquery.maskedinput/src/jquery.maskedinput.js",
+  "node_modules/jquery-validation/dist/jquery.validate.js"
+  ];
+  loadJS(requireJS, "js/views/forms.js");
+</script>

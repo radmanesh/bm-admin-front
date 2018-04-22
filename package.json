@@ -22,7 +22,9 @@
     "popper.js": "1.12.9",
     "select2": "^3.0.0",
     "simple-line-icons": "2.4.1",
-    "summernote": "latest"
+    "summernote": "latest",
+    "blueimp-file-upload": "latest",
+    "fine-uploader": "latest"
   },
   "devDependencies": {
     "browser-sync": "2.23.6",

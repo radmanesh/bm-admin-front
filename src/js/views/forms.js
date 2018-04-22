@@ -1,7 +1,7 @@
 $(function() {
   'use strict';
 
-  $("#date").mask("99/99/9999");
+  $(".jmask.date-mask").mask("99/99/9999");
 
   $('.select2').select2();
 
