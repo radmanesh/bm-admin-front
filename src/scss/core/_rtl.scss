@@ -6,6 +6,9 @@
   direction: rtl;
   unicode-bidi: embed;
 
+
+  text-align: right !important;
+
   ul {
     -webkit-padding-start: 0;
   }
@@ -23,6 +26,8 @@
   .breadcrumb-menu {
     right: auto;
     left: $breadcrumb-padding-x;
+    margin-right: auto;
+    margin-left: 0;
   }
 
   // Dropdown
@@ -131,6 +136,7 @@
   .sidebar {
     .sidebar-nav {
       .nav {
+        text-align: right;
         .nav-item {
           .nav-link {
             direction: rtl;

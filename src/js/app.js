@@ -328,6 +328,35 @@ function init(url) {
 
 }
 
+$(document).ready(function($){
+  $("a.btn-toggle-lang").on('click',function(){
+    // cur_dir = $(this).data('dir');
+    // if(cur_dir=='ltr'){
+    //   $(this).data('dir','rtl');
+    //   $(this).data('lang','fa');
+    //   $(this).text('fa');
+    //   $("html").attr("dir","rtl");
+    // }else if(cur_dir=='rtl'){
+    //   $(this).data('dir','ltr');
+    //   $(this).data('lang','en');
+    //   $(this).text('en');
+    //   $("html").attr("dir","ltr").attr("lang","en");
+    // }
+    if (document.documentElement.lang === "en") {
+      document.documentElement.lang="fa";
+      document.documentElement.dir="rtl";
+      $(this).find('span').text(' fa');
+    } else if (document.documentElement.lang === "fa") {
+      document.documentElement.lang="en";
+      document.documentElement.dir="ltr";
+      $(this).find('span').text(' en');
+    }
+  });
+});
+
+
+
+
 // Production steps of ECMA-262, Edition 6, 22.1.2.1
 if (!Array.from) {
   Array.from = (function () {
