@@ -1,0 +1,15 @@
+// Override Boostrap variables
+@import "bootstrap-variables.scss";
+
+// Import Bootstrap source files
+@import "vendor/bootstrap/scss/bootstrap.scss";
+
+// Override core variables
+@import "core-variables.scss";
+
+// Import core styles
+@import "core/core";
+
+// Custom styles
+@import "custom.scss";
+

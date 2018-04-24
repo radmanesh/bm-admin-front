@@ -1,0 +1,244 @@
+doctype html
+html(lang='en')
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+
+    title SB Admin - Start Bootstrap Template
+
+    include includes/css/core.pug
+
+    include includes/css/custom.pug
+
+  body#page-top.fixed-nav.sticky-footer.bg-dark
+    include includes/navbar.pug
+    .content-wrapper
+      .container
+
+
+        .animated.fadeIn
+          .row
+            .col-md-12
+              .card
+                .card-header
+                  i.icon-note
+                  |  Edit property
+                .card-block
+                  .card.crud-form-card.PropertyManager
+                    .card-header
+                      strong Add Property
+                    .card-body
+                      form.jvalidate(action='/ec/propertymanager', method='post', accept-charset='utf-8', enctype='multipart/form-data')
+                        input(type='hidden', name='authenticityToken', value='06dce21c0af18e28d5b5fe2556f2336adf010eb0')
+                        .crudField.crud_text
+                          #object_name_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_name') name
+                            .col-sm-10
+                              input#object_name.form-control(name='object.name', type='', placeholder='', value='')
+                              small#object_namehelpBlock.form-text.text-muted
+                                div Required.
+                        .crudField.crud_longtext
+                          #object_description_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_description') description
+                            .col-sm-10
+                              textarea#object_description.form-control.summernote.summer2(name='object.description', rows='3')
+                              small#object_descriptionhelpBlock.form-text.text-muted
+                                div Max length is 2048.
+                        .crudField.crud_unknown
+                        .crudField.crud_date
+                          #object_addedAt_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_addedAt') addedAt
+                            .col-sm-10
+                              input#object_addedAt.form-control(name='object.addedAt', type='date', placeholder='', value='')
+                        .crudField.crud_date
+                          #object_modifiedAt_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_modifiedAt') modifiedAt
+                            .col-sm-10
+                              input#object_modifiedAt.form-control(name='object.modifiedAt', type='date', placeholder='', value='')
+                        .crudField.crud_enum
+                          #object_type_group.form-group.row
+                            label.col-sm-2.col-form-label type
+                            .col-sm-10
+                              select#object_type.form-control.select2.select2-single(name='object.type')
+                                option(name='APARTMENT', ord='0', value='APARTMENT') APARTMENT
+                                option(name='DETACHED', ord='1', value='DETACHED') DETACHED
+                                option(name='SEMI_DETACHED', ord='2', value='SEMI_DETACHED') SEMI_DETACHED
+                                option(name='LAND', ord='3', value='LAND') LAND
+                              small#object_typehelpBlock.form-text.text-muted
+                                div Required.
+                        .crudField.crud_enum
+                          #object_status_group.form-group.row
+                            label.col-sm-2.col-form-label status
+                            .col-sm-10
+                              select#object_status.form-control.select2.select2-single(name='object.status')
+                                option(name='AVAILABLE', ord='0', value='AVAILABLE') AVAILABLE
+                                option(name='RENTED', ord='1', value='RENTED') RENTED
+                                option(name='SOLD', ord='2', value='SOLD') SOLD
+                                option(name='UNAVAILABLE', ord='3', value='UNAVAILABLE') UNAVAILABLE
+                              small#object_statushelpBlock.form-text.text-muted
+                                div Required.
+                        .crudField.crud_enum
+                          #object_category_group.form-group.row
+                            label.col-sm-2.col-form-label category
+                            .col-sm-10
+                              select#object_category.form-control.select2.select2-single(name='object.category')
+                                option(name='RESIDENTIAL', ord='0', value='RESIDENTIAL') stock.propertyCategory.residential
+                                option(name='OFFICE', ord='1', value='OFFICE') stock.propertyCategory.office
+                                option(name='COMMERCIAL', ord='2', value='COMMERCIAL') stock.propertyCategory.commercial
+                                option(name='INDUSTRIAL', ord='3', value='INDUSTRIAL') stock.propertyCategory.industrial
+                                option(name='FARMING', ord='4', value='FARMING') stock.propertyCategory.farming
+                              small#object_categoryhelpBlock.form-text.text-muted
+                                div Required.
+                        .crudField.crud_enum
+                          #object_situation_group.form-group.row
+                            label.col-sm-2.col-form-label situation
+                            .col-sm-10
+                              select#object_situation.form-control.select2.select2-single(name='object.situation')
+                                option(name='BUILT', ord='0', value='BUILT') stock.propertySituation.built
+                                option(name='UNDER_CUNSTRUCTION', ord='1', value='UNDER_CUNSTRUCTION') stock.propertySituation.under_cunstruction
+                                option(name='SCHEDULED', ord='2', value='SCHEDULED') stock.propertySituation.scheduled
+                              small#object_situationhelpBlock.form-text.text-muted
+                                div Required.
+                        .crudField.crud_binary
+                          .form-group.row
+                            label.col-sm-2.col-form-label(for='object_propertyPlanSketch') propertyPlanSketch
+                            .col-sm-10
+                              input#object_propertyPlanSketch.form-control-file(type='file', name='object.propertyPlanSketch')
+                          #object_propertyPlanSketchpreviews.row
+                        .crudField.crud_imageRelation
+                        .crudField.crud_unknown
+                        .crudField.crud_unknown
+                        .crudField.crud_binary
+                          .form-group.row
+                            label.col-sm-2.col-form-label(for='object_icon') icon
+                            .col-sm-10
+                              input#object_icon.form-control-file(type='file', name='object.icon')
+                          #object_iconpreviews.row
+                        .crudField.crud_number
+                          #object_toralArea_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_toralArea') toralArea
+                            .col-sm-10
+                              input#object_toralArea.form-control(name='object.toralArea', type='number', placeholder='', value='')
+                              small#object_toralAreahelpBlock.form-text.text-muted
+                                div Between 10 and 10240
+                        .crudField.crud_number
+                          #object_floorLevels_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_floorLevels') floorLevels
+                            .col-sm-10
+                              input#object_floorLevels.form-control(name='object.floorLevels', type='number', placeholder='', value='')
+                        .crudField.crud_number
+                          #object_roomCount_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_roomCount') roomCount
+                            .col-sm-10
+                              input#object_roomCount.form-control(name='object.roomCount', type='number', placeholder='', value='')
+                        .crudField.crud_number
+                          #object_parkingCount_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_parkingCount') parkingCount
+                            .col-sm-10
+                              input#object_parkingCount.form-control(name='object.parkingCount', type='number', placeholder='', value='')
+                        .crudField.crud_number
+                          #object_parkingArea_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_parkingArea') parkingArea
+                            .col-sm-10
+                              input#object_parkingArea.form-control(name='object.parkingArea', type='number', placeholder='', value='')
+                        .crudField.crud_number
+                          #object_livingroomCount_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_livingroomCount') livingroomCount
+                            .col-sm-10
+                              input#object_livingroomCount.form-control(name='object.livingroomCount', type='number', placeholder='', value='')
+                        .crudField.crud_number
+                          #object_restroomCount_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_restroomCount') restroomCount
+                            .col-sm-10
+                              input#object_restroomCount.form-control(name='object.restroomCount', type='number', placeholder='', value='')
+                        .crudField.crud_number
+                          #object_bathroomCount_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_bathroomCount') bathroomCount
+                            .col-sm-10
+                              input#object_bathroomCount.form-control(name='object.bathroomCount', type='number', placeholder='', value='')
+                        .crudField.crud_number
+                          #object_garderArea_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_garderArea') garderArea
+                            .col-sm-10
+                              input#object_garderArea.form-control(name='object.garderArea', type='number', placeholder='', value='')
+                        .crudField.crud_number
+                          #object_storageRoomArea_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_storageRoomArea') storageRoomArea
+                            .col-sm-10
+                              input#object_storageRoomArea.form-control(name='object.storageRoomArea', type='number', placeholder='', value='')
+                        .crudField.crud_relation
+                          #object_valuation_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_valuation') valuation
+                            .col-sm-10
+                              .input-group.mb-3
+                                select#object_valuation.form-control.select2.slect2-single.chosen-select(name='object.valuation.id')
+                                  option(value='') (Please select a value)
+                                .input-group-append
+                                  a.btn.btn-outline-secondary(href='javascript:refreshField_valuation()') Refresh
+                              small#object_valuationhelpBlock.form-text.text-muted
+                                div Required.
+                            script(type='text/javascript').
+                              refreshField_valuation = function() {
+                              var refreshFieldRoute = { url: function(args) { var pattern = '/admin.property.propertymanager/ajaxrefreshfield?fieldName=:fieldName&id=:id'; for (var key in args) { pattern = pattern.replace(':' + key, args[key] || ''); } return pattern; }, method: 'GET' }
+                              $.ajax({
+                              url: refreshFieldRoute.url({ fieldName: 'valuation', id: '' }),
+                              type: refreshFieldRoute.method,
+                              data: ''
+                              })
+                              .done(function(data) {
+                              $('#object_valuation_group').parent().html(data);
+                              console.log(data);
+                              $('select.select2').select2();
+                              })
+                              .fail(function(jqXHR, textStatus) {
+                              alert('failed : ' + textStatus);
+                              })
+                              }
+                        .crudField.crud_relation
+                          #object_provider_group.form-group.row
+                            label.col-sm-2.col-form-label(for='object_provider') provider
+                            .col-sm-10
+                              .input-group.mb-3
+                                select#object_provider.form-control.select2.slect2-single.chosen-select(name='object.provider.id')
+                                  option(value='') (None)
+                                  option(value='7') NaturalPerson[7]
+                                  option(value='8') NaturalPerson[8]
+                                .input-group-append
+                                  a.btn.btn-outline-secondary(href='javascript:refreshField_provider()') Refresh
+                            script(type='text/javascript').
+                              refreshField_provider = function() {
+                              var refreshFieldRoute = { url: function(args) { var pattern = '/admin.property.propertymanager/ajaxrefreshfield?fieldName=:fieldName&id=:id'; for (var key in args) { pattern = pattern.replace(':' + key, args[key] || ''); } return pattern; }, method: 'GET' }
+                              $.ajax({
+                              url: refreshFieldRoute.url({ fieldName: 'provider', id: '' }),
+                              type: refreshFieldRoute.method,
+                              data: ''
+                              })
+                              .done(function(data) {
+                              $('#object_provider_group').parent().html(data);
+                              console.log(data);
+                              $('select.select2').select2();
+                              })
+                              .fail(function(jqXHR, textStatus) {
+                              alert('failed : ' + textStatus);
+                              })
+                              }
+                        p.crudButtons
+                          input.btn.btn-primary(type='submit', name='_save', value='Save')
+                          input.btn.btn-default(type='submit', name='_saveAndContinue', value='Save and continue editing')
+                          input.btn.btn-default(type='submit', name='_saveAndAddAnother', value='Save and create another')
+            // /.col
+          // /.row
+
+      include includes/footer.pug
+
+      include includes/scroll-to-top.pug
+
+      include includes/modals/logout.pug
+
+      include includes/js/core.pug
+
+      include includes/js/custom.pug

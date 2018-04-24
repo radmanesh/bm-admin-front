@@ -1,0 +1,73 @@
+doctype html
+html(lang='en')
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+
+    title SB Admin - Start Bootstrap Template
+
+    include includes/css/core.pug
+
+    include includes/css/custom.pug
+
+  body#page-top.fixed-nav.sticky-footer.bg-dark
+    include includes/navbar.pug
+    .content-wrapper
+      .container
+        .animated.fadeIn
+          .row
+            .col-md-12
+              h1.display-4 Username (role)
+              .card
+                .card-header
+                  i.fa.fa-user
+                  |  Users
+                .card-body
+                  form#signupForm.noSubmit(action='')
+                    .form-group.row
+                      label.col-md-3.col-form-label Username:
+                      .col-md-9
+                        p.form-control-static ahmad
+                    .form-group.row
+                      label.col-md-3.col-form-label Full Name:
+                      .col-md-9
+                        p.form-control-static Ahmad Kazemi
+                    .form-group.row
+                      label.col-md-3.col-form-label Email:
+                      .col-md-9
+                        p.form-control-static ahmad.kazemi@gmail.com
+                    .form-group.row
+                      label.col-md-3.col-form-label Mobile:
+                      .col-md-9
+                        p.form-control-static 09111231234
+                    .form-group.row
+                      label.col-md-3.col-form-label Email Verification:
+                      .col-md-6
+                        p.form-control-static
+                          span.badge.badge-success Confirmed
+                    .form-group.row
+                      label.col-md-3.col-form-label Roles:
+                      .col-md-6
+                        ul.list-inline
+                          li.list-inline-item
+                            span.badge.badge-pill.badge-dark user
+                          li.list-inline-item
+                            span.badge.badge-pill.badge-dark admin
+                    .form-group
+                      a.btn.btn-primary Edit
+                      a.btn.btn-danger(href='#') Deactivate
+
+
+      include includes/footer.pug
+
+      include includes/scroll-to-top.pug
+
+      include includes/modals/logout.pug
+
+      include includes/js/core.pug
+
+      include includes/js/custom.pug
